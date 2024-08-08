@@ -4,6 +4,7 @@ from BABYMUSIC.core.git import git
 from BABYMUSIC.core.userbot import Userbot
 from BABYMUSIC.misc import dbb, heroku
 
+from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
 dirr()
@@ -11,7 +12,8 @@ git()
 dbb()
 heroku()
 
-app = Baby()
+app = VIP()
+api = SafoneAPI()
 userbot = Userbot()
 
 
@@ -24,3 +26,4 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
+YTB = YTM()
