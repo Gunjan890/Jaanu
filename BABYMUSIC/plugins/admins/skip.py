@@ -2,15 +2,16 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from BABYMUSIC import YouTube, app
-from BABYMUSIC.core.call import Baby
+from BABYMUSIC import YouTube, app, YTB
+from BABYMUSIC.core.call import baby
 from BABYMUSIC.misc import db
 from BABYMUSIC.utils.database import get_loop
 from BABYMUSIC.utils.decorators import AdminRightsCheck
-from BABYMUSIC.utils.inline import close_markup, stream_markup
+from BABYMUSIC.utils.inline import close_markup, stream_markup, telegram_markup
 from BABYMUSIC.utils.stream.autoclear import auto_clean
 from BABYMUSIC.utils.thumbnails import get_thumb
 from config import BANNED_USERS
+
 
 @app.on_message(
     filters.command(["skip", "cskip", "next", "cnext"], prefixes=["/", "!", "."])
@@ -49,7 +50,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await VIP.stop_stream(chat_id)
+                                    await baby.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -76,7 +77,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await VIP.stop_stream(chat_id)
+                    return await baby.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -87,7 +88,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await VIP.stop_stream(chat_id)
+                return await baby.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -153,7 +154,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await VIP.skip_stream(chat_id, file_path, video=status, image=image)
+            await baby.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, videoid, chat_id)
@@ -173,7 +174,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await VIP.skip_stream(chat_id, videoid, video=status)
+            await baby.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = telegram_markup(_, chat_id)
@@ -195,7 +196,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await VIP.skip_stream(chat_id, queued, video=status, image=image)
+            await baby.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
