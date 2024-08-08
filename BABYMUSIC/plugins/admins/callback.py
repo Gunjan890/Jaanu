@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from BABYMUSIC import YouTube, app, YTB
-from BABYMUSIC.core.call import VIP
+from BABYMUSIC.core.call import baby
 from BABYMUSIC.misc import SUDOERS, db
 from BABYMUSIC.utils.database import (
     get_active_chats,
@@ -141,7 +141,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await VIP.pause_stream(chat_id)
+        await baby.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_2"].format(mention),
         )
@@ -150,13 +150,13 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await VIP.resume_stream(chat_id)
+        await baby.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_4"].format(mention),
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await VIP.stop_stream(chat_id)
+        await baby.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_5"].format(mention),
@@ -181,7 +181,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         
                     )
                     try:
-                        return await VIP.stop_stream(chat_id)
+                        return await baby.stop_stream(chat_id)
                     except:
                         return
             except:
@@ -194,7 +194,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                             mention, CallbackQuery.message.chat.title
                         ),
                     )
-                    return await VIP.stop_stream(chat_id)
+                    return await baby.stop_stream(chat_id)
                 except:
                     return
         else:
@@ -291,7 +291,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await VIP.skip_stream(chat_id, videoid, video=status)
+                await baby.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = telegram_markup(_, chat_id)
@@ -314,7 +314,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await VIP.skip_stream(chat_id, queued, video=status, image=image)
+                await baby.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             if videoid == "telegram":
