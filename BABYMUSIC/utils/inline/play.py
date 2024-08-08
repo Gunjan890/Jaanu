@@ -69,13 +69,13 @@ def stream_markup_timer(_, chat_id, played, dur):
         ],
       [
             InlineKeyboardButton(
-                text="❃ σɯɳҽɾ ❃", url="https://t.me/Deewana_mastanaaa",
+                text="✰𝐎ᴡɴᴇʀ✰", url="https://t.me/Deewana_mastanaaa",
             ),
             InlineKeyboardButton(
-                text="❃ ʂυρρσɾт ❃", url="https://t.me/+RE7mS3_NsZxhODA1",
+                text="✰𝐒ᴜᴘᴘᴏʀᴛ✰", url="https://t.me/+RE7mS3_NsZxhODA1",
             )
         ],
-         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="❃ ƈʅσʂҽ ❃")],
+         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="✰𝐂ʟᴏsᴇ✰")],
     ]
     return buttons
 
@@ -91,13 +91,13 @@ def stream_markup(_, chat_id):
          ],
         [
             InlineKeyboardButton(
-                text="❃ σɯɳҽɾ ❃", url="https://t.me/Deewana_mastanaaa",
+                text="✰𝐎ᴡɴᴇʀ✰", url="https://t.me/@Deewana_mastanaaa",
             ),
             InlineKeyboardButton(
-                text="❃ ʂυρρσɾт ❃", url="https://t.me/+RE7mS3_NsZxhODA1",
+                text="✰𝐒ᴜᴘᴘᴏʀᴛ✰", url="https://t.me/+RE7mS3_NsZxhODA1",
             )
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="❃ ƈʅσʂҽ ❃")],
+        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="✰𝐂ʟᴏsᴇ✰")],
     ]
     return buttons
 
