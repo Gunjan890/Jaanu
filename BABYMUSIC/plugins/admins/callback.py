@@ -3,10 +3,10 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from VIPMUSIC import YouTube, app, YTB
-from VIPMUSIC.core.call import VIP
-from VIPMUSIC.misc import SUDOERS, db
-from VIPMUSIC.utils.database import (
+from BABYMUSIC import YouTube, app, YTB
+from BABYMUSIC.core.call import VIP
+from BABYMUSIC.misc import SUDOERS, db
+from BABYMUSIC.utils.database import (
     get_active_chats,
     get_lang,
     get_upvote_count,
@@ -17,17 +17,17 @@ from VIPMUSIC.utils.database import (
     music_on,
     set_loop,
 )
-from VIPMUSIC.utils.decorators.language import languageCB
-from VIPMUSIC.utils.formatters import seconds_to_min
-from VIPMUSIC.utils.inline import (
+from BABYMUSIC.utils.decorators.language import languageCB
+from BABYMUSIC.utils.formatters import seconds_to_min
+from BABYMUSIC.utils.inline import (
     close_markup,
     stream_markup,
     stream_markup_timer,
     telegram_markup,
     telegram_markup_timer,
 )
-from VIPMUSIC.utils.stream.autoclear import auto_clean
-from VIPMUSIC.utils.thumbnails import get_thumb
+from BABYMUSIC.utils.stream.autoclear import auto_clean
+from BABYMUSIC.utils.thumbnails import get_thumb
 from config import (
     BANNED_USERS,
     SOUNCLOUD_IMG_URL,
