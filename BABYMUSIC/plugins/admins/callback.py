@@ -1,4 +1,3 @@
-arkup_timer())
 import asyncio
 
 from pyrogram import filters
