@@ -10,7 +10,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 from Spotify_Music.utils.database import get_assistant
 import config
 from BABYMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from BABYMUSIC.core.call import Spotify
+from BABYMUSIC.core.call import Baby
 from BABYMUSIC.utils import SUDOERS
 from BABYMUSIC.utils import seconds_to_min, time_to_seconds
 from BABYMUSIC.utils.channelplay import get_channeplayCB
@@ -49,7 +49,7 @@ from pyrogram.types import InlineKeyboardMarkup
 
 import config
 from BABYMUSIC import Carbon, YouTube, app
-from BABYMUSIC.core.call import Spotify
+from BABYMUSIC.core.call import Baby
 from BABYMUSIC.misc import db
 from BABYMUSIC.utils.database import add_active_video_chat, is_active_chat
 from BABYMUSIC.utils.exceptions import AssistantErr
@@ -76,7 +76,7 @@ async def stream(
     original_chat_id,
     video: Union[bool, str] = None,
     streamtype: Union[bool, str] = None,
-    spotify: Union[bool, str] = None,
+    Baby: Union[bool, str] = None,
     forceplay: Union[bool, str] = None,
 ):
     if not result:
@@ -96,7 +96,7 @@ async def stream(
                     duration_sec,
                     thumbnail,
                     vidid,
-                ) = await YouTube.details(search, False if spotify else True)
+                ) = await YouTube.details(search, False if Baby else True)
             except:
                 continue
             if str(duration_min) == "None":
@@ -129,7 +129,7 @@ async def stream(
                     )
                 except:
                     await mystic.edit_text(_["play_3"])
-                await Spotify.join_call(
+                await Baby.join_call(
                     chat_id,
                     original_chat_id,
                     file_path,
@@ -167,7 +167,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await brandedBin(msg)
+            link = await BAbybin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
@@ -220,7 +220,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Spotify.join_call(
+            await Baby.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -281,7 +281,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Spotify.join_call(chat_id, original_chat_id, file_path, video=None)
+            await Baby.join_call(chat_id, original_chat_id, file_path, video=None)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -333,7 +333,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Spotify.join_call(chat_id, original_chat_id, file_path, video=status)
+            await Baby.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
