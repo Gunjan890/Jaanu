@@ -1,10 +1,10 @@
-from BABYMUSIC.core.bot import Spotify
+from BABYMUSIC.core.bot import Baby
 from BABYMUSIC.core.dir import dirr
 from BABYMUSIC.core.git import git
 from BABYMUSIC.core.userbot import Userbot
 from BABYMUSIC.misc import dbb, heroku
 
-from SafoneAPI import SafoneAPI
+from BabyAPI import BabyAPI
 from .logging import LOGGER
 
 dirr()
@@ -12,9 +12,9 @@ git()
 dbb()
 heroku()
 
-app = Spotify()
+app = baby()
+api = BabyAPI()
 userbot = Userbot()
-api = SafoneAPI()
 
 
 from .platforms import *
@@ -27,4 +27,4 @@ Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
 
-APP = "Gaana_MusicBot"  # connect music api key "Dont change it"
+APP = "senorita_musicvc_bot"  # connect music api key "Dont change it"
