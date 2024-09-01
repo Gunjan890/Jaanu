@@ -4,7 +4,7 @@ from BABYMUSIC.core.git import git
 from BABYMUSIC.core.userbot import Userbot
 from BABYMUSIC.misc import dbb, heroku
 
-from BabyAPI import BabyAPI
+from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
 dirr()
