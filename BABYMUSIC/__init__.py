@@ -13,7 +13,7 @@ dbb()
 heroku()
 
 app = Baby()
-api = BabyAPI()
+api = SafoneAPI()
 userbot = Userbot()
 
 
