@@ -43,9 +43,9 @@ yt-dlp
 gtts
 youtube_search
 youtube-search-python
-git+https://github.com/Gunjan890/SafoneAPI
-git+https://github.com/Gunjan890/BadAPI
-git+https://github.com/Gunjan890/yt-dp-fork
+git+https://github.com/badmunda98/SafoneAPI
+git+https://github.com/badmunda98/BadAPI
+git+https://github.com/badmunda98/yt-dp-fork
 lexica-api==1.4.7
 httpx==0.25.2
 gpytranslate
