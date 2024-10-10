@@ -15,7 +15,11 @@
  <h3> 𝗛𝗘𝗥𝗢𝗞𝗨 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗕𝗨𝗧𝗧𝗢𝗡 </h3>
  
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Gunjan890/jaanu"> <img src="https://telegra.ph/file/b60b4cb88bca1cf437062.jpg" width="220" height="38.45"/></a></p> 
- 
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Gunjan890/Jaanu&branch=main&name=mastimusicbot)
+━━━━━━━━━━━━━━━━━━━━
+
+
 - Get your [Necessary Variables](https://github.com/https://github.com/Vivekkumar-IN/VIP-MUSIC//master/sample.env)
 - Upgrade and Update by :
 `sudo apt-get update && sudo apt-get upgrade -y`
