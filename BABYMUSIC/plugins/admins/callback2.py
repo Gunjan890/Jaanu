@@ -4,7 +4,7 @@ from BABYMUSIC.utils.database import get_assistant
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from BABYMUSIC import YouTube, app
-from BABYMUSIC.core.call import Baby
+from BABYMUSIC.core.call import BABY
 from BABYMUSIC.misc import SUDOERS, db
 from BABYMUSIC.utils.database import (
     get_active_chats,
